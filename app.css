@@ -251,7 +251,6 @@ main section.home .content ul li svg:hover {
 /** MAIN: ABOUT **/
 
 main section.about {
-    display: flex;
     align-items: center;
 }
 

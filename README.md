@@ -6,7 +6,7 @@ This project is part of my front-end development journey. Rather than reaching f
 
 No build step. No dependencies. No `node_modules`. Three files.
 
-**Live site:** https://opizzey.github.io/portfolio/
+**Live site:** https://opizzey.github.io/Portfolio/
 
 ---
 
@@ -72,8 +72,8 @@ There is nothing to install. The project is static HTML, CSS, and JavaScript wit
 ### Option 1 — Open the file directly
 
 ```bash
-git clone https://github.com/Opizzey/portfolio.git
-cd portfolio
+git clone https://github.com/Opizzey/Portfolio.git
+cd Portfolio
 ```
 
 Then open `index.html` in any browser. Double-clicking it works.
