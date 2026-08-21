@@ -90,6 +90,8 @@ a.active {
 nav {
     display: flex;
     height: 100vh;
+    position: sticky;
+    top: 0;
     flex-direction: column;
     justify-content: center;
     width: 15%;
