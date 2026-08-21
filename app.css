@@ -1,0 +1,467 @@
+/* *****************************************************************************************************************
+Portfolio Template built by Dennis Opiyo (@Opizzey)
+Follow me on LinkIn: https://www.linkedin.com/in/dennis-opiyo-8725b8146/
+"whenever I think of doing something, I think 'Would an idiot do that?' And if they would, I do not do that this."
+***************************************************************************************************************** */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/** RESET **/
+/* 1. Box sizing rules & text size adjustments */
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* 2. Remove default margins and padding */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Remove list styles on ul, ol elements */
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 4. Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Make images and media easier to work with */
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* 6. Inherit fonts for inputs and buttons */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Remove animations for users who prefer reduced motion */
+/* @media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} */
+
+/** APP GLOBAL **/
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-smooth: always;
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a.active {
+    font-weight: 700;
+    color: #f9da85;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/** NAV **/
+nav {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    width: 15%;
+    padding: 16px 32px;
+    background-color: black;
+    flex-shrink: 0;
+}
+
+nav h1 {
+    color: white;
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    line-height: 1.2;
+    transition: color .4s ease;
+}
+
+nav h1:hover {
+    color: #f9da85;
+}
+
+nav p {
+    color: #999999;
+    font-style: italic;
+    font-size: 14px;
+}
+
+nav a.author {
+    font-style: italic;
+    color: #999999c4;
+    font-size: 12px;
+}
+
+nav ul {
+    margin-bottom: 48px;
+
+}
+
+nav ul li {
+    margin-bottom: 16px;
+}
+
+nav ul li a {
+    font-size: 14px;
+    position: relative;
+}
+
+nav ul li a.active:before {
+    background-color: #f9da85;
+}
+
+nav ul li a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover:before {
+    visibility: visible;
+    width: 100%;
+}
+
+nav ul li:last-of-type {
+    margin-bottom: 0;
+}
+
+/** MAIN **/
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+main section {
+    display: flex;
+    height: 100%;
+    max-width: 900px;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 32px 0;
+}
+
+main section h2 {
+    color: black;
+    font-size: 48px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+main section p {
+    color: #383838;
+}
+
+main section:not(.home) {
+    display: none;
+}
+
+/** MAIN: HOME **/
+main section.home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+main section.home .avatar {
+    flex: 0 0 250px;
+    margin-right: 64px;
+}
+
+main section.home .avatar img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 10px solid #f9da85;
+
+    animation-name: morph;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+}
+
+main section.home .content {
+    flex: 1;
+}
+
+main section.home .content ul {
+    display: flex;
+    margin-top: 24px;
+}
+
+main section.home .content ul li {
+    margin-right: 24px;
+}
+
+main section.home .content ul li a {
+    color: black;
+}
+
+main section.home .content ul li svg {
+    width: 17px;
+    height: 17px;
+    transition: color .4s ease;
+}
+
+main section.home .content ul li svg:hover {
+    color: #f9da85;
+}
+
+/** MAIN: ABOUT **/
+
+main section.about {
+    display: flex;
+    align-items: center;
+}
+
+main section.about .large-image {
+    flex: 0 0 500px;
+    margin-right: 64px;
+    margin-bottom: 64px;
+    display: flex;
+    justify-content: center;
+}
+
+main section.about .large-image img {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 10 / 9;
+    object-fit: cover;
+    border: 10px solid #f9da85;
+
+    animation-name: morph;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+}
+
+main section.about h2 {
+    font-size: 40px;
+}
+
+main section.about h2 span {
+    font-style: italic;
+}
+
+main section.about p:last-of-type {
+    margin-bottom: 0;
+}
+
+/** MAIN: PORTFOLIO **/
+
+main section.portfolio {
+    flex-direction: column;
+    justify-content: center;
+}
+
+main section.portfolio .photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+main section.portfolio .photos img {
+    width: 100%;
+    aspect-ratio: 7 / 5;
+    object-fit: cover;
+    border: 10px solid #f9da85;
+
+    animation-name: morph;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    border-radius: 60% 40% 30% 75%/80% 30% 50% 40%;
+}
+
+/** MAIN: CONTACT **/
+main section.contact .map {
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+main section.contact .form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+main section.contact p:first-of-type {
+    margin-bottom: 32px;
+}
+
+main section.contact input,
+main section.contact textarea {
+    color:#383838;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,.2);
+    background-color: transparent;
+    font-style: italic;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+main section.contact textarea {
+    resize: none;
+}
+
+main section.contact button {
+    height: 64px;
+    width: 100%;
+    background-color: #f9da85;
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 4px solid #ecca6b;
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+}
+
+main section.contact button:hover {
+    background-color: #ffca3a;
+}
+
+/** ANIMATIONS **/
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 70% 60% 40% / 40% 60% 30% 70%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+/** RESPONSIVENESS **/
+
+@media (max-width: 1250px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    nav {
+        width: 100%;
+        height: auto;
+        padding: 32px;
+    }
+    nav h1 {
+        margin-bottom: 16px;
+    }
+
+    nav ul {
+        display: flex;
+        margin-bottom: 0;
+    }
+
+    nav ul li {
+        margin-right: 16px;
+        margin-bottom: 0;
+    }
+    nav ul li:last-of-type {
+        margin-right: 0;
+    }
+
+    nav p, nav > a {
+        display: none;
+    }
+
+    main{
+        width: 100%;
+    }
+
+    main section {
+        padding: 32px;
+    }
+
+    main section.home {
+        flex-direction: column;
+    }
+
+    main section.home .avatar {
+        margin-right: 0;
+        margin-bottom: 32px;
+        display: flex;
+        justify-content: center;
+        flex: none;
+    }
+
+    main section.home .content ul {
+        justify-content: center;
+    }
+
+    main section.about {
+        flex-direction: column;
+    }
+
+    main section.about .large-image{
+        flex: none;
+        margin-right: 0;
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: 1050px) {
+    main section.portfolio .photos {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    main section.portfolio .photos img {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    main section h2 {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    main section.about h2 {
+        font-size: 28px;
+    }
+}
