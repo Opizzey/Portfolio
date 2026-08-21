@@ -304,7 +304,7 @@ main section.portfolio .photos {
 
 main section.portfolio .photos img {
     width: 100%;
-    aspect-ratio: 7 / 5;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     border: 10px solid #f9da85;
 
